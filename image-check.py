@@ -74,6 +74,9 @@ def main():
               file=sys.stderr)
         sys.exit(-1)
 
+    resp = req.json()
+    print("Pipeline triggered; check results at {0}".format(resp['html_url']))
+
     # TODO Add slack notification to re-tag the image if build is successful
     # req.json()['url'] and req.json()['html_url'] will point to the pipeline execution status, might be
     # useful to include in the notification
