@@ -14,7 +14,16 @@ Expected environment variables:
 - `IMG_NAME_TAG` -- Full name and tag of the docker image to monitor, e.g.
                   "us.icr.io/wh-tor-dev-rns/hdtl-ibmcos-sink:1.1.0"
 - `DEVOPS_PIPELINE_ID` -- devops pipeline ID
-- `DEVOPS_WEBHOOK_ID` -- devops trigger ID. In the example URL https://devops-api.us-east.devops.cloud.ibm.com/v1/tekton-webhook/55c8bed2-2d6c-4dfe-b766-d07eed236418/run/9a820d05-5183-470b-b5ac-01d2cad6b6b7                  
-                "55c8bed2-2d6c-4dfe-b766-d07eed236418" is the pipeline ID and
-                "9a820d05-5183-470b-b5ac-01d2cad6b6b7" is the trigger ID.
+- `DEVOPS_WEBHOOK_ID` -- devops trigger ID. In the example URL https://devops-api.us-east.devops.cloud.ibm.com/v1/tekton-webhook/XXXXX/run/YYYYY                  
+                "XXXXX" is the pipeline ID and "YYYYY" is the trigger ID.
 - `DEVOPS_WEBHOOK_TOKEN` -- authentication token for the webhook. Parameter name will be "token".               
+
+Sample execution:
+
+```
+APIKEY="XXX" CLOUD_ACCT=abcxxxx \
+IMG_NAME_TAG="us.icr.io/wh-tor-dev-rns/hdtl-ibmcos-sink:1.1.0" \
+DEVOPS_PIPELINE_ID=XXXXX DEVOPS_WEBHOOK_ID=YYYYY \
+DEVOPS_WEBHOOK_TOKEN=ZZZZZ python3 image-check.py
+
+```
