@@ -1,4 +1,4 @@
-# Container Check
+# Image Check
 
 This Python script checks if the specified image stored in the IBM Cloud Container Registry has any vulnerabilities detected by the Vulnerability Advisor. If there are any, the script calls a DevOps pipeline webhook that rebuilds the image.
 

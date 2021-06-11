@@ -3,7 +3,7 @@ import os
 import sys
 import urllib
 
-""" Check container for vulnerabilities and trigger Docker build if found.
+""" Check image in CR for vulnerabilities and trigger Docker build if found.
 
 Required environment variables:
 - APIKEY -- IBM Cloud API key
